@@ -21,10 +21,7 @@ namespace LogInProject
             }
             public IWebDriver Driver { get; set; }
 
-            /*This is where you have to provide username, password and repeat password
-                          /usng config file to supply the login details 
-                          e.g valid credentials
-            //Setting up Nunit.Framework 
+            /*This is where you have to provide username, password
             //set up everything before the test starts!*/
 
             [OneTimeSetUp]
@@ -52,7 +49,6 @@ namespace LogInProject
            // Assert.IsTrue(Driver.FindElement(By.XPath(//*[@id="ssr-webnav"]/div/div[1]/nav[1]/div[4]/div[2]/div[1]/div[2]/descendant::span[text()='Jo Kalnavarna']")));
         }
         //user assertions to confirm if test is succesfull
-
 
         [OneTimeTearDown]
             public void CleanUp()

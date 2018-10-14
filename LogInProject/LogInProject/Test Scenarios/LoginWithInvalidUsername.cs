@@ -41,7 +41,7 @@ namespace LogInProject
         //Test where I have a valid Password but invalid Email Address.
         public void InvalidUserName()
         {
-            Actions.FillLoginForm(TestBase.Credentials.Invalid.IncorrectEmail,
+            Actions.FillLoginForm(TestBase.Credentials.Invalid.Username.IncorrectEmail,
                                 TestBase.Credentials.Valid.Password,
                                 Driver);
 
@@ -53,7 +53,7 @@ namespace LogInProject
         //Test where I have a valid Password but invalid Email Address.
         public void InvalidUserName2()
         {
-            Actions.FillLoginForm(TestBase.Credentials.Invalid.IncorrectSecondEmail,
+            Actions.FillLoginForm(TestBase.Credentials.Invalid.Username.IncorrectSecondEmail,
                                 TestBase.Credentials.Valid.Password,
                                 Driver);
 
@@ -65,7 +65,7 @@ namespace LogInProject
         //Test where I have a valid Password but invalid Email Address.
         public void InvalidUserName3()
         {
-            Actions.FillLoginForm(TestBase.Credentials.Invalid.IncorrectThirdEmail,
+            Actions.FillLoginForm(TestBase.Credentials.Invalid.Username.IncorrectThirdEmail,
                                 TestBase.Credentials.Valid.Password,
                                 Driver);
 
@@ -74,7 +74,7 @@ namespace LogInProject
         }
         public void InvalidUserName4()
         {
-            Actions.FillLoginForm(TestBase.Credentials.Invalid.IncorrectFourthEmail,
+            Actions.FillLoginForm(TestBase.Credentials.Invalid.Username.IncorrectFourthEmail,
                                 TestBase.Credentials.Valid.Password,
                                 Driver);
 

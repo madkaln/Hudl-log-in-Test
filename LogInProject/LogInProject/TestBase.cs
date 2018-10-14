@@ -20,20 +20,24 @@ namespace LogInProject
             public static class Valid
             {
                 public static string Email = "madara.k@hotmail.co.uk";
-                public static string Password = "14thOct!";             
+                public static string Password = "14thOct!";
             }
 
             public static class Invalid
             {
-             
+                public static class Username
+                {
+
                     public static string IncorrectEmail = "madara@hotmail.co.uk";
                     public static string IncorrectSecondEmail = "madara.kalnavarna@hotmail.co.uk";
                     public static string IncorrectThirdEmail = "madara.k@otmail.co.uk";
                     public static string IncorrectFourthEmail = "madarak@otmail.co.uk";
 
-            }
+                }
+
                 public static class Password
                 {
+
                     public static string IncorrectPassword = "testing123";
                     public static string PasswordwithJustNumbers = "1234";
                     public static string Passwordwithfiveletters = "1234";
@@ -43,5 +47,7 @@ namespace LogInProject
             }
 
         }
+    }
 }
+
 
