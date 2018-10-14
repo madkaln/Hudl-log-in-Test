@@ -48,8 +48,7 @@ namespace LogInProject
             Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
 
           }
-        
-
+      
         [OneTimeTearDown]
             public void CleanUp()
             {

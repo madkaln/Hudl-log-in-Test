@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace LogInProject.UI_Elements
 {
+
+    // Homepage drive is initialised here
     class HomePage
     {
         public HomePage(IWebDriver driver)

@@ -17,14 +17,15 @@ namespace LogInProject
 
             public LogInWithInvalidPassword()
             {
-
             }
             public IWebDriver Driver { get; set; }
 
             /*This is where you have to provide username, password and repeat password
-            *usng config file to supply the login details e.g valid credentials
+            *usng TestBase file to supply the login details e.g valid credentials
             *set up everything before the test starts!
             */
+
+            //Initialise the driver
 
             [OneTimeSetUp]
             public void Initlize()
@@ -32,11 +33,11 @@ namespace LogInProject
                 Driver = Actions.InitlizeDriver();
                 NavigateTo.NavigateToLogInPage(Driver);
             }
-            //between SetUp and TearDown creat tests.
+            //between SetUp and TearDown create tests.
 
             [Test]
 
-            //Test where I have a valid Password but invalid Email Address.
+            //Test where I have a valid Email but invalid password.
             public void InvalidPassword()
             {
                 Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
@@ -45,14 +46,14 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
-
+            //Assertion to test that the log-in message matches the expected login error message
             var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
             Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
 
         }
             [Test]
 
-            //Test where I have a valid Password but invalid Email Address.
+            //Test where I have a valid email but invalid password with 5 letters
             public void InvalidPasswordWithFiveLetters()
             {
             Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
@@ -67,7 +68,7 @@ namespace LogInProject
         }
             [Test]
 
-            //Test where I have a valid Password but invalid Email Address.
+            //Test where I have a valid Email but password wiith just numbers.
             public void InvalidPasswordWithJustNumbers()
             {
             Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
@@ -81,6 +82,8 @@ namespace LogInProject
 
 
         }
+            // Test password with special characters
+             [Test]
             public void InvalidPasswordwithSpecialCharacters()
             {
             Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
@@ -93,11 +96,6 @@ namespace LogInProject
             Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
 
         }
-         
-        
-        
-        //user assertions to confirm if test is succesfull
-
 
             [OneTimeTearDown]
             public void CleanUp()

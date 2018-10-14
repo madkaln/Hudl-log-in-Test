@@ -32,6 +32,8 @@ namespace LogInProject
         //between SetUp and TearDown create tests.
         [Test]
 
+
+        // Valid Log in details
         public void ValidLogIn()
         {
             Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
@@ -43,8 +45,6 @@ namespace LogInProject
          //comparing an element that is found after log in with the expected "AfterLogin"message   
          var LogInMessage = Driver.FindElement(By.CssSelector("#ssr-webnav > div > div.hui-webnav__grid.hui-navcontainer > nav.hui-webnav__grid-col--onewhole.hui-globalnav > div:nth-child(2) > a.hui-globalnav__item.hui-globalnav__explore")).Text;
          Assert.AreEqual(TestBase.AssertionMessages.AfterLogIn, LogInMessage);
-
-
         }
 
         [OneTimeTearDown]

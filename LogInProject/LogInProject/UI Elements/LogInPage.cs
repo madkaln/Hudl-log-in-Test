@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace LogInProject.UI_Elements
 {
+
+    //Log in page driver with all the IWeb Elements are stored here.
     class LogInPage
     {
         public LogInPage(IWebDriver driver)

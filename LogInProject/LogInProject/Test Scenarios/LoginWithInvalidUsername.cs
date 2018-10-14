@@ -34,8 +34,6 @@ namespace LogInProject
         //between SetUp and TearDown creat tests.
         //first test method
 
-        /* Equal to see what we expect vs actual
-        */
         [Test]
 
         //Test where I have a valid Password but invalid Email Address.

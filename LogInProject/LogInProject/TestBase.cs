@@ -40,7 +40,7 @@ namespace LogInProject
 
                     public static string IncorrectPassword = "testing123";
                     public static string PasswordwithJustNumbers = "1234";
-                    public static string Passwordwithfiveletters = "1234";
+                    public static string Passwordwithfiveletters = "adsec";
                     public static string PasswordWithSpecialCharacters = "£!()";
 
                 }

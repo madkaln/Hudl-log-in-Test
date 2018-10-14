@@ -14,7 +14,7 @@ namespace LogInProject
         {
             //using method that is in the Home page and navigates to LogIn page
             HomePage menu = new HomePage(driver);
-            //initialise log in elements that I have defined in te UI Element - LogIn page get;set;
+            //initialise and click the log in elements that I have defined in te UI Element - LogIn page get;set;
             menu.LogInButton.Click();         
 
         }
