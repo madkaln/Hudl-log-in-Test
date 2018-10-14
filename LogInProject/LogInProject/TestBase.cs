@@ -25,14 +25,13 @@ namespace LogInProject
 
             public static class Invalid
             {
-                public static class Email
-                {
+             
                     public static string IncorrectEmail = "madara@hotmail.co.uk";
                     public static string IncorrectSecondEmail = "madara.kalnavarna@hotmail.co.uk";
-                    public static string IncorrectThirdEmaiil = "madara.k@otmail.co.uk";
-                    public static string IncorrectFourthEmaiil = "madarak@otmail.co.uk";
+                    public static string IncorrectThirdEmail = "madara.k@otmail.co.uk";
+                    public static string IncorrectFourthEmail = "madarak@otmail.co.uk";
 
-                }
+            }
                 public static class Password
                 {
                     public static string IncorrectPassword = "testing123";
@@ -44,5 +43,5 @@ namespace LogInProject
             }
 
         }
-    }
 }
+

@@ -33,34 +33,28 @@ namespace LogInProject
                 Driver = Actions.InitlizeDriver();
                 NavigateTo.NavigateToLogInPage(Driver);
             }
-            //between SetUp and TearDown creat tests.
-            //first test method
+        //between SetUp and TearDown creat tests.
+        //first test method
 
-            /* Equal to see what we expect vs actual
-            *Using Config File to get the message.
-            * Actual will be the alert box on what is appearing
-            */
-            [Test]
+        /* Equal to see what we expect vs actual
+        *Using Config File to get the message.
+        */
+        [Test]
 
-            public void ValidLogIn()
-            {
-                Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
-                                    TestBase.Credentials.Valid.Password,
-                                    Driver);
+        public void ValidLogIn()
+        {
+            Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
+                                TestBase.Credentials.Valid.Password,
+                                Driver);
 
-                Thread.Sleep(5000);
-           
-            }
-            //user assertions to confirm if test is succesfull
-            //use IAlert to recognise that th test is validd
+            Thread.Sleep(5000);
 
-            /*in this particular case when logged
-             * Alert box appears
-             * For future reference, map out how to make assertions
-             * ID? Need a bit of research on how to creat good assertions
-            */
+           // Assert.IsTrue(Driver.FindElement(By.XPath(//*[@id="ssr-webnav"]/div/div[1]/nav[1]/div[4]/div[2]/div[1]/div[2]/descendant::span[text()='Jo Kalnavarna']")));
+        }
+        //user assertions to confirm if test is succesfull
 
-            [OneTimeTearDown]
+
+        [OneTimeTearDown]
             public void CleanUp()
             {
                 Driver.Quit();
