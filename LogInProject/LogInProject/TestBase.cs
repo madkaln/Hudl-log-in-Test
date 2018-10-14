@@ -51,7 +51,7 @@ namespace LogInProject
         public static class AssertionMessages
         {
             //appears on succesful log-in
-            public static string SuccesfullLogInUserName = "Jo Kalnavarna";
+            public static string AfterLogIn = "Explore";
             public static string IncorrectLogInDetails = "We didn't recognize that email and/or password. Need help?";
 
         }

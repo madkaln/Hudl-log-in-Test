@@ -47,6 +47,9 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
         }
         [Test]
 
@@ -58,6 +61,9 @@ namespace LogInProject
                                 Driver);
 
             Thread.Sleep(5000);
+
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
 
         }
         [Test]
@@ -71,6 +77,9 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
         }
         public void InvalidUserName4()
         {
@@ -79,6 +88,8 @@ namespace LogInProject
                                 Driver);
 
             Thread.Sleep(5000);
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
 
         }
         //user assertions to confirm if test is succesfull

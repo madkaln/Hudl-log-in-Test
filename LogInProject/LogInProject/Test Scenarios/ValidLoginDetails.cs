@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace LogInProject
 {
-   
         [Parallelizable]
 
         public class ValidLoginDetails
@@ -30,12 +29,7 @@ namespace LogInProject
                 Driver = Actions.InitlizeDriver();
                 NavigateTo.NavigateToLogInPage(Driver);
             }
-        //between SetUp and TearDown creat tests.
-        //first test method
-
-        /* Equal to see what we expect vs actual
-        *Using Config File to get the message.
-        */
+        //between SetUp and TearDown create tests.
         [Test]
 
         public void ValidLogIn()
@@ -46,7 +40,11 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
-        //assertion
+         //comparing an element that is found after log in with the expected "AfterLogin"message   
+         var LogInMessage = Driver.FindElement(By.CssSelector("#ssr-webnav > div > div.hui-webnav__grid.hui-navcontainer > nav.hui-webnav__grid-col--onewhole.hui-globalnav > div:nth-child(2) > a.hui-globalnav__item.hui-globalnav__explore")).Text;
+         Assert.AreEqual(TestBase.AssertionMessages.AfterLogIn, LogInMessage);
+
+
         }
 
         [OneTimeTearDown]

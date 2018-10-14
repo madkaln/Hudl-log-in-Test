@@ -33,10 +33,7 @@ namespace LogInProject
                 NavigateTo.NavigateToLogInPage(Driver);
             }
             //between SetUp and TearDown creat tests.
-            //first test method
 
-            /* Equal to see what we expect vs actual
-            */
             [Test]
 
             //Test where I have a valid Password but invalid Email Address.
@@ -46,9 +43,13 @@ namespace LogInProject
                                     TestBase.Credentials.Invalid.Password.IncorrectPassword,
                                     Driver);
 
-                Thread.Sleep(5000);
+            Thread.Sleep(5000);
 
-            }
+
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
+        }
             [Test]
 
             //Test where I have a valid Password but invalid Email Address.
@@ -60,7 +61,10 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
-            }
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
+        }
             [Test]
 
             //Test where I have a valid Password but invalid Email Address.
@@ -72,8 +76,11 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
- 
-            }
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
+
+        }
             public void InvalidPasswordwithSpecialCharacters()
             {
             Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
@@ -82,7 +89,10 @@ namespace LogInProject
 
             Thread.Sleep(5000);
 
-            }
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
+        }
          
         
         
