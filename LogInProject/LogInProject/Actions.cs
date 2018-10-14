@@ -37,7 +37,7 @@ namespace LogInProject
             LogInPage logIn = new LogInPage(driver);
 
 
-            //using clear to clear any content before its run. e.g. all the inputs in the field.
+            //using clear to clear any content before its run. e.g. all the inputs in the text field.
 
             logIn.UserNameField.Clear();
             logIn.UserNameField.SendKeys(email);

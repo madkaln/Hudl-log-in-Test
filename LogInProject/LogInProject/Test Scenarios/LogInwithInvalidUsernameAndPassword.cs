@@ -12,10 +12,10 @@ namespace LogInProject
    
         [Parallelizable]
 
-        public class ValidLoginDetails
+        public class LogInwithInvalidUsernameAndPassword
 
-        {
-            public ValidLoginDetails()
+    {
+            public LogInwithInvalidUsernameAndPassword()
             {
 
             }
@@ -32,22 +32,23 @@ namespace LogInProject
             }
         //between SetUp and TearDown creat tests.
         //first test method
-
-        /* Equal to see what we expect vs actual
-        *Using Config File to get the message.
-        */
         [Test]
 
-        public void ValidLogIn()
+        public void InvalidLoginAndPassword()
         {
-            Actions.FillLoginForm(TestBase.Credentials.Valid.Email,
-                                TestBase.Credentials.Valid.Password,
+            Actions.FillLoginForm(TestBase.Credentials.Invalid.Username.IncorrectEmail,
+                                TestBase.Credentials.Invalid.Password.IncorrectPassword,
                                 Driver);
 
             Thread.Sleep(5000);
+            //user assertions to confirm if test is succesfull
+            //Finds element on the log-in page and then asserts if its equal to incorrect details.
 
-        //assertion
-        }
+            var LogInErrorMessage = Driver.FindElement(By.CssSelector("body > div.super-wrap > form.login-container > div.login-error.fade-in-expand > div > p")).Text;
+            Assert.AreEqual(TestBase.AssertionMessages.IncorrectLogInDetails, LogInErrorMessage);
+
+          }
+        
 
         [OneTimeTearDown]
             public void CleanUp()
